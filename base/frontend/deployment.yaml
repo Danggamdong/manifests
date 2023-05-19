@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-backend-java
+  name: todo-frontend-ts
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: todo
+      app: frontend
   template:
     metadata:
       labels:
-        app: todo
+        app: frontend
     spec:
       containers:
-      - name: backend
-        image: tunkcalb/todo-backend-java:deploy
+      - name: frontend
+        image: pkr5207/todo-frontend-ts:deploy
         imagePullPolicy: Always
         ports:
         - containerPort: 30080

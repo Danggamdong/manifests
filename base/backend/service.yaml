@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: todo-backend-java
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - name: "http-port"
+    protocol: "TCP"
     port: 80
-    nodePort: 30080
+    targetPort: 80
   selector:
-    app: todo
+    app: backend
