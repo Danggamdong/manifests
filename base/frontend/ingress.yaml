@@ -4,15 +4,11 @@ metadata:
   name: todo-frontend-ts
   annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/issuer: clusterissuer-staging
+    nginx.ingress.kubernetes.io/force-ssl-redirect: false
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  tls:
-    - hosts:
-        - danggamdong.kro.kr
-      secretName: letsencrypt-staging
   rules:
-    - host: danggamdong.kro.kr
-      http:
+    - http:
         paths:
           - pathType: Prefix
             path: /
