@@ -9,6 +9,7 @@ spec:
   tls:
     - hosts:
         - danggamdong.kro.kr
+      secretName: letsencrypt-staging
   rules:
     - host: danggamdong.kro.kr
       http:
